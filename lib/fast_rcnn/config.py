@@ -1,8 +1,7 @@
 # --------------------------------------------------------
-# Fast R-CNN
-# Copyright (c) 2015 Microsoft
+# Fast R-CNN with OHEM
 # Licensed under The MIT License [see LICENSE for details]
-# Written by Ross Girshick
+# Written by Ross Girshick and Abhinav Shrivastava
 # --------------------------------------------------------
 
 """Fast R-CNN config system.
@@ -123,6 +122,11 @@ __C.TRAIN.RPN_BBOX_INSIDE_WEIGHTS = (1.0, 1.0, 1.0, 1.0)
 # Set to -1.0 to use uniform example weighting
 __C.TRAIN.RPN_POSITIVE_WEIGHT = -1.0
 
+# Parameters for "Online Hard-example Mining Algorithm"
+__C.TRAIN.USE_OHEM = False
+# For diversity and de-duplication
+__C.TRAIN.OHEM_USE_NMS = True
+__C.TRAIN.OHEM_NMS_THRESH = 0.7
 
 #
 # Testing options

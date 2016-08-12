@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 
 # --------------------------------------------------------
-# Fast R-CNN
-# Copyright (c) 2015 Microsoft
+# Fast R-CNN with OHEM
 # Licensed under The MIT License [see LICENSE for details]
-# Written by Ross Girshick
+# Written by Ross Girshick and Abhinav Shrivastava
 # --------------------------------------------------------
 
 """Test a Fast R-CNN network on an image database."""
@@ -49,6 +48,9 @@ def parse_args():
     parser.add_argument('--num_dets', dest='max_per_image',
                         help='max number of detections per image',
                         default=100, type=int)
+    parser.add_argument('--det_thresh', dest='det_thresh',
+                        help='detection score threshold',
+                        default=0.05, type=float)
 
     if len(sys.argv) == 1:
         parser.print_help()
@@ -87,4 +89,4 @@ if __name__ == '__main__':
     if not cfg.TEST.HAS_RPN:
         imdb.set_proposal_method(cfg.TEST.PROPOSAL_METHOD)
 
-    test_net(net, imdb, max_per_image=args.max_per_image, vis=args.vis)
+    test_net(net, imdb, max_per_image=args.max_per_image, vis=args.vis, thresh=args.det_thresh)

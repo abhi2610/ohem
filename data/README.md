@@ -1,6 +1,16 @@
 This directory holds (*after you download them*):
+- Fast R-CNN models trained with OHEM on VOC 2007 trainval
 - Caffe models pre-trained on ImageNet
 - Symlinks to datasets
+
+To download Fast R-CNN models (VGG_CNN_M_1024, VGG16) trained with OHEM on VOC 2007 trainval, run:
+
+```
+./data/scripts/fetch_fast_rcnn_ohem_models.sh
+```
+
+This script will populate `data/fast_rcnn_ohem_models` with VGG16 and VGG_CNN_M_1024 models (Fast R-CNN detectors trained with OHEM).
+
 
 To download Caffe models (ZF, VGG16) pre-trained on ImageNet, run:
 
