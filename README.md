@@ -31,22 +31,22 @@ This implementation is built on a *fork* of Faster R-CNN Python code ([here](htt
 
 ### Results
 
-                              | training data                                             | test data      | mAP (paper)   | mAP (this repo)
+                        | training data                       | test data    | mAP (paper)   | mAP (this repo)
  :--- | :--- | :--- | :--- | :--- |
-Fast R-CNN  (FRCN)            | VOC 07 trainval                                           | VOC 07 test  | 66.9   | 
-FRCN with OHEM          | VOC 07 trainval                                           | VOC 07 test  | 69.9   | 71.5
-FRCN, +M, +B            | VOC 07 trainval                                           | VOC 07 test  | 72.4   | 
-FRCN with OHEM, +M, +B  | VOC 07 trainval                                           | VOC 07 test  | 75.1   | 
-FRCN                    | VOC 07 trainval + 12 trainval                             | VOC 07 test  | 70.0   | 
-FRCN with OHEM          | VOC 07 trainval + 12 trainval                             | VOC 07 test  | 74.6   | 
-FRCN with OHEM, +M, +B  | VOC 07 trainval + 12 trainval                             | VOC 07 test  | 78.9   | 
-FRCN                    | VOC 12 trainval                                           | VOC 12 test  | 65.7   | 
-FRCN with OHEM          | VOC 12 trainval                                           | VOC 12 test  | 69.8   | 
-FRCN with OHEM, +M, +B  | VOC 12 trainval                                           | VOC 12 test  | 72.9   | 
-FRCN                    | VOC 07 trainval&test + 12 trainval                        | VOC 12 test  | 68.4   | 
-FRCN with OHEM          | VOC 07 trainval&test + 12 trainval                        | VOC 12 test  | 71.9   | 
-FRCN with OHEM, +M, +B  | VOC 07 trainval&test + 12 trainval                        | VOC 12 test  | 76.3   | 
-FRCN with OHEM, +M, +B  |  *above* + COCO 14 trainval  | VOC 12 test  | 80.1   | 
+Fast R-CNN  (FRCN)      | VOC 07 trainval                     | VOC 07 test  | 66.9   | 
+FRCN with OHEM          | VOC 07 trainval                     | VOC 07 test  | 69.9   | 71.5
+FRCN, +M, +B            | VOC 07 trainval                     | VOC 07 test  | 72.4   | 
+FRCN with OHEM, +M, +B  | VOC 07 trainval                     | VOC 07 test  | 75.1   | 
+FRCN                    | VOC 07 trainval + 12 trainval       | VOC 07 test  | 70.0   | 
+FRCN with OHEM          | VOC 07 trainval + 12 trainval       | VOC 07 test  | 74.6   | 75.5
+FRCN with OHEM, +M, +B  | VOC 07 trainval + 12 trainval       | VOC 07 test  | 78.9   | 
+FRCN                    | VOC 12 trainval                     | VOC 12 test  | 65.7   | 
+FRCN with OHEM          | VOC 12 trainval                     | VOC 12 test  | 69.8   | 
+FRCN with OHEM, +M, +B  | VOC 12 trainval                     | VOC 12 test  | 72.9   | 
+FRCN                    | VOC 07 trainval&test + 12 trainval  | VOC 12 test  | 68.4   | 
+FRCN with OHEM          | VOC 07 trainval&test + 12 trainval  | VOC 12 test  | 71.9   | 
+FRCN with OHEM, +M, +B  | VOC 07 trainval&test + 12 trainval  | VOC 12 test  | 76.3   | 
+FRCN with OHEM, +M, +B  |  *above* + COCO 14 trainval         | VOC 12 test  | 80.1   | 
 
 **Note**: All methods above use the VGG16 network. `mAP (paper)` is the mAP reported in the paper. `mAP (this repo)` is the mAP reproduced by this codebase.
 
@@ -131,9 +131,9 @@ FRCN with OHEM, +M, +B  |  *above* + COCO 14 trainval  | VOC 12 test  | 80.1   |
     ./data/scripts/fetch_fast_rcnn_ohem_models.sh
     ```
     This will populate the `$OHEM_ROOT/data` folder with a `fast_rcnn_ohem_models` folder which contains VGG16 and VGG_CNN_M_1024 models (Fast R-CNN detectors trained with OHEM). 
-    These models were trained on VOC 2007 trainval.
+    The format will be `fast_rcnn_ohem_models/TRAINING_SET/MODEL_FILE`.
 
-*These models were re-trained using this codebase and achieve slightly better performance (see [this Table](#results)). In particular, VGG_CNN_M_1024 model gets 62.8 mAP (compared to 62.0 mAP reported in paper) and VGG16 model gets 71.5 mAP (compared to 69.9 mAP). All other models from the paper will be released soon.*
+*These models were re-trained using this codebase and achieve slightly better performance (see [this Table](#results)). In particular, on the standard split, VGG_CNN_M_1024 model gets 62.8 mAP (compared to 62.0 mAP reported in paper) and VGG16 model gets 71.5 mAP (compared to 69.9 mAP). All models from the paper will be released soon.*
 
 ### Installation for training and testing models
 1. Download the training, validation, test data and VOCdevkit
@@ -185,8 +185,7 @@ Models come from the [Caffe Model Zoo](https://github.com/BVLC/caffe/wiki/Model-
 
 ### Usage
 
-To train a Fast R-CNN detector using the **OHEM** algorithm from our paper, use `experiments/scripts/fast_rcnn_ohem.sh`.
-Output is written underneath `$OHEM_ROOT/output`.
+To train a Fast R-CNN detector using the **OHEM** algorithm on voc_2007_trainval, use `experiments/scripts/fast_rcnn_ohem.sh`. See `experiments/scripts/` directory for other scripts. Output is written underneath `$OHEM_ROOT/output`.
 
 ```Shell
 cd $OHEM_ROOT
