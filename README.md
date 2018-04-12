@@ -31,22 +31,22 @@ This implementation is built on a *fork* of Faster R-CNN Python code ([here](htt
 
 ### Results
 
-                        | training data                       | test data    | mAP (paper)   | mAP (this repo)
- :--- | :--- | :--- | :--- | :--- |
-Fast R-CNN  (FRCN)      | VOC 07 trainval                     | VOC 07 test  | 66.9   | 67.6
-FRCN with OHEM          | VOC 07 trainval                     | VOC 07 test  | 69.9   | 71.5
-FRCN, +M, +B            | VOC 07 trainval                     | VOC 07 test  | 72.4   | 
-FRCN with OHEM, +M, +B  | VOC 07 trainval                     | VOC 07 test  | 75.1   | 
-FRCN                    | VOC 07 trainval + 12 trainval       | VOC 07 test  | 70.0   | 
-FRCN with OHEM          | VOC 07 trainval + 12 trainval       | VOC 07 test  | 74.6   | 75.5
-FRCN with OHEM, +M, +B  | VOC 07 trainval + 12 trainval       | VOC 07 test  | 78.9   | 
-FRCN                    | VOC 12 trainval                     | VOC 12 test  | 65.7   | 
-FRCN with OHEM          | VOC 12 trainval                     | VOC 12 test  | 69.8   | 
-FRCN with OHEM, +M, +B  | VOC 12 trainval                     | VOC 12 test  | 72.9   | 
-FRCN                    | VOC 07 trainval&test + 12 trainval  | VOC 12 test  | 68.4   | 
-FRCN with OHEM          | VOC 07 trainval&test + 12 trainval  | VOC 12 test  | 71.9   | 
-FRCN with OHEM, +M, +B  | VOC 07 trainval&test + 12 trainval  | VOC 12 test  | 76.3   | 
-FRCN with OHEM, +M, +B  |  *above* + COCO 14 trainval         | VOC 12 test  | 80.1   | 
+|                        | training data                       | test data    | mAP (paper)   | mAP (this repo) |
+|:--- | :--- | :--- | :--- | :--- |
+|Fast R-CNN  (FRCN)      | VOC 07 trainval                     | VOC 07 test  | 66.9   | 67.6  |
+|FRCN with OHEM          | VOC 07 trainval                     | VOC 07 test  | 69.9   | 71.5 |
+|FRCN, +M, +B            | VOC 07 trainval                     | VOC 07 test  | 72.4   |  |
+|FRCN with OHEM, +M, +B  | VOC 07 trainval                     | VOC 07 test  | 75.1   |  |
+|FRCN                    | VOC 07 trainval + 12 trainval       | VOC 07 test  | 70.0   |  |
+|FRCN with OHEM          | VOC 07 trainval + 12 trainval       | VOC 07 test  | 74.6   | 75.5 |
+|FRCN with OHEM, +M, +B  | VOC 07 trainval + 12 trainval       | VOC 07 test  | 78.9   |  |
+|FRCN                    | VOC 12 trainval                     | VOC 12 test  | 65.7   |  |
+|FRCN with OHEM          | VOC 12 trainval                     | VOC 12 test  | 69.8   |  |
+|FRCN with OHEM, +M, +B  | VOC 12 trainval                     | VOC 12 test  | 72.9   |  |
+|FRCN                    | VOC 07 trainval&test + 12 trainval  | VOC 12 test  | 68.4   |  |
+|FRCN with OHEM          | VOC 07 trainval&test + 12 trainval  | VOC 12 test  | 71.9   |  |
+|FRCN with OHEM, +M, +B  | VOC 07 trainval&test + 12 trainval  | VOC 12 test  | 76.3   |  |
+|FRCN with OHEM, +M, +B  |  *above* + COCO 14 trainval         | VOC 12 test  | 80.1   |  |
 
 **Note**: All methods above use the VGG16 network. `mAP (paper)` is the mAP reported in the paper. `mAP (this repo)` is the mAP reproduced by this codebase.
 
@@ -54,6 +54,8 @@ FRCN with OHEM, +M, +B  |  *above* + COCO 14 trainval         | VOC 12 test  | 8
 
 ### Coming soon
 - [x] Initial OHEM release
+
+### Sometime in the future
 - [ ] Support for Multi-scale training and testing
 - [ ] Support for Multi-stage bounding box regression
 - [ ] Scripts/models for results in [this Table](#results)
