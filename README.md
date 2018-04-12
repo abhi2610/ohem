@@ -52,7 +52,7 @@ This implementation is built on a *fork* of Faster R-CNN Python code ([here](htt
 
 **Legend**: `+M`: using multi-scale for training and testing, `+B`: multi-stage bounding box regression. See the paper for details.
 
-### Coming soon
+### Released
 - [x] Initial OHEM release
 
 ### Sometime in the future
